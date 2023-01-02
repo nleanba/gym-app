@@ -1,0 +1,200 @@
+:root {
+  --background-color: oklch(98% 0.01 63);
+  --background-color: rgb(253.56, 247.13, 241.69);
+  --background:       white;
+
+  --primary-dark:  oklch(60% 0.13 63);
+  --primary-dark:  rgb(181.47, 108.12, 21.27);
+  --primary:       oklch(75% 0.16 63);
+  --primary:       rgb(243.39, 147.98, 38);
+  --primary-light: oklch(90% 0.14 63);
+  --primary-light: rgb(252.62, 168.19, 84.73);
+
+  --accent:       oklch(60% 0.23 25);
+  --accent:       rgb(234.09, 31.05, 47.29);
+  --accent-light: oklch(75% 0.15 25);
+  --accent-light: rgb(254.75, 132.45, 124.76);
+}
+
+*:where(:not(html, iframe, canvas, img, svg, video, audio):not(svg *, symbol *)) {
+  all: unset;
+  box-sizing: border-box;
+  cursor: revert;
+  display: revert;
+}
+
+:where([hidden]) {
+  display: none;
+}
+
+/* Revert Modal native behavior */
+:where(dialog:modal) {
+  all: revert;
+}
+
+body {
+  background-color: var(--background);
+  font-family: "Inter V", Inter, Arial, Helvetica, sans-serif;
+}
+
+button {
+  color: var(--accent);
+}
+
+.exercise {
+  background-color: var(--background-color);
+  border-radius: 1rem;
+  display: grid;
+  gap: .5rem;
+  grid-template-columns: 3rem 1fr auto;
+  margin: .5rem;
+  width: calc(100% - 1rem);
+  max-width: calc(100% - 1rem);
+  padding: .5rem;
+}
+
+.done {
+  color: var(--primary-dark);
+}
+
+.code {
+  background-color: var(--accent);
+  border-radius: .5rem;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  font-size: 1.5rem;
+  font-weight: 800;
+  grid-row: 1 / 4;
+  justify-content: space-between;
+  padding: .5rem 0;
+  text-align: center;
+}
+
+.done .code {
+  background-color: var(--primary);
+}
+
+  .count {
+    font-weight: 400;
+  }
+
+.label {
+  align-self: center;
+  font-weight: 600;
+}
+
+.settings {
+  max-width: 100%;
+  display: grid;
+  gap: .5rem 0;
+  grid-column: 2 / -1;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+}
+
+  .setting {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 300;
+    padding: 0 0 0 1rem;
+  }
+
+.reps, .weight {
+  background-color: var(--accent-light);
+  color: white;
+  border-radius: .5rem;
+  font-size: 1.5rem;
+  font-weight: 400;
+  padding: .5rem;
+  text-align: center;
+}
+
+.done .reps,
+.done .weight {
+  background-color: var(--primary-light);
+}
+
+.reps::after {
+  content: "x";
+  font-weight: 600;
+  font-size: .5rem;
+}
+
+.weight::after {
+  content: "kg";
+  font-weight: 600;
+  font-size: .5rem;
+}
+
+.actions {
+  display: flex;
+  justify-content: space-between;
+  gap: .5rem;
+  grid-column: 2 / -1;
+}
+
+.main-actions {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: .5rem;
+  grid-column: 2 / -1;
+  margin: 1rem;
+}
+
+.button {
+  background-color: var(--primary);
+  border-radius: 2rem;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  font-size: 1rem;
+  font-weight: 800;
+  grid-row: 1 / 4;
+  justify-content: space-between;
+  padding: .5rem 1.5rem;
+  text-align: center;
+}
+
+#reset-sets {
+  background-color: var(--background-color);
+  color: var(--primary);
+}
+
+/* dialog */
+
+dialog {
+  border: 1px solid var(--accent-light);
+  border-radius: 1rem;
+  width: 100vw;
+  padding: 0;
+}
+
+label {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  margin: .5rem;
+  padding: .5rem;
+}
+
+input[type=text] {
+  border: 1px solid var(--accent-light);
+  border-radius: .5rem;
+  margin: -.5rem;
+  padding: .5rem;
+}
+
+legend {
+  margin-left: 1rem;
+  font-weight: 600;
+}
+
+#settings div {
+  padding-bottom: .5rem;
+}
+
+dialog .actions {
+  border-top: 1px solid var(--accent-light);
+  padding: .5rem;
+  margin-top: .5rem;
+}

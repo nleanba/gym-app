@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>gym-app</title>
+</head>
+
+<body>
+  <dialog id="edit-dialog">
+    <form method="dialog">
+      <div>
+        <label>Code:
+          <input id="code" type="text">
+        </label>
+        <label>Name:
+          <input id="name" type="text">
+        </label>
+        <label>Weight:
+          <input id="weight" type="text">
+        </label>
+        <fieldset id="settings">
+          <legend data-settings="0">Settings</legend>
+        </fieldset>
+      </div>
+      <div class="actions">
+        <button type="button" id="add-settings">Add Setting</button>
+        <button value="cancel">Cancel</button>
+        <button id="confirmBtn" value="default">Add</button>
+      </div>
+    </form>
+  </dialog>
+
+  <div id="exercises"></div>
+
+  <div class="main-actions">
+    <button class="button" id="add-exercise">Add Exercise</button>
+    <button class="button" id="reset-sets">Reset Set Counts</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
